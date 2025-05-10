@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ulimit -c unlimited
+alias qmake='qmake-qt5 -r'
+alias qmaked='qmake-qt5 -r -config debug'
+
+#export QT_LOGGING_RULES="*.debug=true"
+
+source /home/uncrewed/.bashrc.d/rosenv.sh

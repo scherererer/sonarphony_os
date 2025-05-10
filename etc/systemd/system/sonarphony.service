@@ -1,0 +1,16 @@
+[Unit]
+Description=SonarPhony ROS2 Node
+Wants=time-sync.target
+After=network.target time-sync.target
+
+[Service]
+Type=simple
+User=uncrewed
+Group=uncrewed
+ExecStart=/bin/bash -c 'source /home/uncrewed/.bashrc.d/rosenv.sh; ros2 run sonarphony_node sonarphony_node;'
+RemainAfterExit=no
+Restart=on-failure
+RestartSec=2s
+
+[Install]
+WantedBy=default.target

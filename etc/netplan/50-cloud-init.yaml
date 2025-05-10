@@ -1,0 +1,28 @@
+network:
+  version: 2
+  ethernets:
+    eth0:
+      ignore-carrier: true
+      addresses:
+        - 10.1.1.218/24
+      routes:
+        - to: default
+          via: 10.1.1.1
+      match:
+        macaddress: 2c:cf:67:88:2c:95
+      nameservers:
+        search:
+          - "mycompany.local"
+        addresses:
+          - 8.8.8.8
+          - 10.1.1.1
+  wifis:
+    wlan0:
+      optional: true
+      dhcp4: true
+      dhcp6: false
+      access-points:
+        "T-BOX-DE8":
+          password: "12345678"
+      dhcp4-overrides:
+        use-routes: false
